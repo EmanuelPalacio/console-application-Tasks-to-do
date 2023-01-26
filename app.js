@@ -6,6 +6,9 @@ import { readDB, saveTask } from "./db/crudDB.js";
 const main = async () => {
   let opt = "";
   const tasks = new Tasks();
+  if (readDB()) {
+    tasks.pushTasksFromArray(readDB());
+  }
 
   do {
     opt = await inquirerMenu();
@@ -16,7 +19,7 @@ const main = async () => {
         tasks.createTask(desc);
         break;
       case 2:
-        console.log(readDB());
+        console.log(tasks.listArr);
         break;
       case 3:
         break;
