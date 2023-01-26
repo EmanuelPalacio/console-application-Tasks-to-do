@@ -1,10 +1,12 @@
 import "colors";
 import { inquirerMenu, pause, readInput } from "./helpers/inquirer.js";
 import Tasks from "./models/tasks.js";
+import { readDB, saveTask } from "./db/crudDB.js";
 
 const main = async () => {
   let opt = "";
   const tasks = new Tasks();
+
   do {
     opt = await inquirerMenu();
 
@@ -14,7 +16,7 @@ const main = async () => {
         tasks.createTask(desc);
         break;
       case 2:
-        console.log(tasks._list);
+        console.log(readDB());
         break;
       case 3:
         break;
@@ -22,7 +24,7 @@ const main = async () => {
       default:
         break;
     }
-
+    saveTask(tasks.listArr);
     await pause();
   } while (opt !== 0);
 };

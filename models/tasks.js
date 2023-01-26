@@ -9,4 +9,11 @@ export default class Tasks {
     const task = new Task(description);
     this._list[task.id] = task;
   }
+  get listArr() {
+    const convertToArray = [];
+    Object.keys(this._list).forEach((key) =>
+      convertToArray.push(this._list[key])
+    );
+    return convertToArray;
+  }
 }
