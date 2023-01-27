@@ -1,20 +1,5 @@
 [
   {
-    "description": "a",
-    "id": "acfc1f37-06fe-4b27-adfb-04b7386a4f90",
-    "completedIn": true
-  },
-  {
-    "description": "b",
-    "id": "aa7fca5f-2443-4e33-afb1-54fc2f4e2a45",
-    "completedIn": true
-  },
-  {
-    "description": "c",
-    "id": "47a9c4a0-753c-41d7-8ecd-80d042d64c97",
-    "completedIn": false
-  },
-  {
     "description": "z",
     "id": "ee076317-acb0-4646-8aac-be3dd63516bc",
     "completedIn": true

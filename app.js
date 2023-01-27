@@ -1,5 +1,11 @@
 import "colors";
-import { inquirerMenu, pause, readInput } from "./helpers/inquirer.js";
+import {
+  inquirerMenu,
+  pause,
+  readInput,
+  deleteTask,
+  confirm,
+} from "./helpers/inquirer.js";
 import Tasks from "./models/tasks.js";
 import { readDB, saveTask } from "./db/crudDB.js";
 
@@ -27,7 +33,18 @@ const main = async () => {
       case 4:
         tasks.viewCompletedTasks(false);
         break;
-      default:
+      case 5:
+        tasks.viewCompletedTasks(false);
+        break;
+      case 6:
+        const id = await deleteTask(tasks.listArr);
+        if (id !== 0) {
+          const approve = await confirm("¿Esta seguro?");
+          approve && tasks.deleteTask(id);
+        }
+        break;
+      case 0:
+        tasks.viewCompletedTasks(false);
         break;
     }
     saveTask(tasks.listArr);

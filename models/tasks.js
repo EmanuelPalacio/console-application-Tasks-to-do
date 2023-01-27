@@ -44,4 +44,9 @@ export default class Tasks {
       console.log(`${position} ${description} :: ${condition}`);
     });
   }
+  deleteTask(id) {
+    if (this._list[id]) {
+      delete this._list[id];
+    }
+  }
 }
