@@ -28,8 +28,19 @@ export default class Tasks {
     this.listArr.forEach((task, i) => {
       const { completedIn, description } = task;
       const position = `${i + 1}`.magenta;
-      const condition =
-        !completedIn === null ? `completado`.green : `pendiente`.red;
+      const condition = completedIn ? `completado`.green : `pendiente`.red;
+      console.log(`${position} ${description} :: ${condition}`);
+    });
+  }
+  viewCompletedTasks(condition) {
+    const filterTasks = this.listArr.filter((elem) => {
+      return elem.completedIn === condition;
+    });
+
+    filterTasks.forEach((task, i) => {
+      const { completedIn, description } = task;
+      const position = `${i + 1}`.magenta;
+      const condition = completedIn ? `completado`.green : `pendiente`.red;
       console.log(`${position} ${description} :: ${condition}`);
     });
   }

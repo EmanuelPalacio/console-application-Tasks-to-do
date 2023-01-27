@@ -22,8 +22,11 @@ const main = async () => {
         tasks.viewTasks();
         break;
       case 3:
+        tasks.viewCompletedTasks(true);
         break;
-
+      case 4:
+        tasks.viewCompletedTasks(false);
+        break;
       default:
         break;
     }

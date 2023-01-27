@@ -4,6 +4,6 @@ export default class Task {
   constructor(description) {
     this.description = description;
     this.id = uuidv4();
-    this.completedIn = null;
+    this.completedIn = false;
   }
 }
