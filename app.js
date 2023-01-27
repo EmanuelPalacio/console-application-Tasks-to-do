@@ -19,7 +19,7 @@ const main = async () => {
         tasks.createTask(desc);
         break;
       case 2:
-        console.log(tasks.listArr);
+        tasks.viewTasks();
         break;
       case 3:
         break;
