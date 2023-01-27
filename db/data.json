@@ -2,7 +2,7 @@
   {
     "description": "z",
     "id": "ee076317-acb0-4646-8aac-be3dd63516bc",
-    "completedIn": true
+    "completedIn": false
   },
   {
     "description": "g",
@@ -12,6 +12,16 @@
   {
     "description": "h",
     "id": "62dfdc79-edcb-498e-852d-acba60a83b7f",
-    "completedIn": false
+    "completedIn": true
+  },
+  {
+    "description": "lavar la ropa",
+    "id": "42071693-c923-4474-80fc-866e81b7271a",
+    "completedIn": true
+  },
+  {
+    "description": "cocinar",
+    "id": "ca311704-ca58-47a2-b0d1-49e4dbccadac",
+    "completedIn": true
   }
 ]

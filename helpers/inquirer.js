@@ -103,6 +103,27 @@ export const deleteTask = async (tasks) => {
 
   return id;
 };
+export const SelecTask = async (tasks) => {
+  const choices = tasks.map((task, i) => {
+    const position = `${i + 1}`.magenta;
+    return {
+      value: task.id,
+      name: `${position}. ${task.description}`,
+      checked: task.completedIn,
+    };
+  });
+  const question = [
+    {
+      type: "checkbox",
+      name: "ids",
+      message: "Selecciona",
+      choices,
+    },
+  ];
+  const { ids } = await inquirer.prompt(question);
+
+  return ids;
+};
 export const confirm = async (message) => {
   const question = [
     {

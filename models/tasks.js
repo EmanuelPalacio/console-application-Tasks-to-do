@@ -44,6 +44,16 @@ export default class Tasks {
       console.log(`${position} ${description} :: ${condition}`);
     });
   }
+
+  completeTask(ids) {
+    ids.forEach((id) => {
+      this._list[id].completedIn = true;
+    });
+    this.listArr.forEach((task) => {
+      !ids.includes(task.id) && (this._list[task.id].completedIn = false);
+    });
+  }
+
   deleteTask(id) {
     if (this._list[id]) {
       delete this._list[id];
